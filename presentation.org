@@ -1,0 +1,31 @@
+* What?
+** React is a library for creating UI
+** Code example:
+Ratings component
+
+* Why?
+** One way data flow - one way event flow. You can think of your components as trees. Data flows from parent to chilred, and events are propagated from child to parent
+** Zero magic - just plain Javascript objects being created by plain functions, that have no side-effects
+** Can render to different formats.
+*** Because a component is just a JS object, you can pass it thru a function to render it to DOM Objects (the default in React), to a string of HTML elements, to Apple Cocoa objects (React Native), to URL (React Router), or anything else
+Because of this, making apps that run in the client for modern browsers and render on the server for old browsers (or people with no JS) is an easy task.
+Many send a html version first, and then async loads React and it 'becomes' a SPA after it already has rendered - unbeatable load times for SPA
+*** Dead simple to test - components are objects, so unit testing is just checking it the results of it's methods are what you expect. You can do this with just assertions and have a good time.
+* Who?
+** Facebook.com
+** Instagram.com
+** KhanAcademy.org
+** Hipchat.com by Atlassian
+** Flipboard (on the mobile they render to canvas, on desktop to DOM)
+** Atom (the text editor)
+** CircleCi (Using react via ClojureScript)
+** Squarespace
+** Codecademy
+** Github Issues
+** Mobile.de Dealer Ratings
+
+* How?
+
+npm install react browserify reactify
+mkdir src dest
+Makefile: rm -r dest/* && cp src/index.html dest/ && ./node_modules/.bin/browserify -t reactify -e src/index.jsx > dest/bundle.js && open dest/index.html
