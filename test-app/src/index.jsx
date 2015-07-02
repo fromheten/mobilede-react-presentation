@@ -34,5 +34,5 @@ var App = React.createClass({
 });
 
 React.render(
-    <App />, document.body
+    <App />, document.getElementById("container");
 )
